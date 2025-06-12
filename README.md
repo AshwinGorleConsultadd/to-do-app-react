@@ -1,54 +1,93 @@
-# React + TypeScript + Vite
+# To‑Do App (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+A simple yet fully functional To‑Do list application built with React. It demonstrates a clean, scalable frontend architecture using modern libraries and practices, ideal for managing tasks within a layered structure.
 
-Currently, two official plugins are available:
+## Libraries Used
+- **React** — UI library for component-based development  
+- **shadcn UI** — Modern, customizable UI components  
+- **zustand** — Simplified state management  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
+- **Language**: TypeScript  
+- **Package Manager**: npm  
+- **Environment**: Node.js installed
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Clone the Repository
+```bash
+git clone https://github.com/AshwinGorleConsultadd/to-do-app-react
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Navigate Into Directory
+```bash
+cd to-do-app-react
+```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Install Dependencies
+```bash
+npm install
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## Usage
+
+Start the development server:
+
+```bash
+npm start
+```
+
+The app will launch at `http://localhost:3000` by default. It supports:
+
+- Adding new tasks
+- Marking tasks as completed
+- Editing task titles
+- Deleting tasks
+
+## Testing
+
+Run the test suite:
+
+```bash
+npm test
+```
+
+## Folder Structure
+
+```
+/src
+  /components     # Reusable UI components (e.g., TodoItem, TodoList, Header, Footer)
+  /features       # Redux slices or domain logic (e.g., todos slice)
+  /hooks          # Custom hooks
+  /app            # Redux store setup and provider
+  /utils          # Utility functions/helpers
+/public           # Static assets and HTML entry point
+package.json
+tsconfig.json
+```
+
+## State Management
+State is centrally managed with Redux Toolkit:
+
+- Slice for todos: actions include add, edit, toggle, delete
+- Reducers update task list immutably
+- Components dispatch actions and read from selectors
+
+## Future Enhancements
+
+- Add task persistence (localStorage or backend)
+- Implement due dates and reminders
+- Introduce filters (e.g., Active, Completed)
+
+
+
+
+##  Quick Start
+
+```bash
+git clone https://github.com/AshwinGorleConsultadd/to-do-app-react
+cd to-do-app-react
+npm install
+npm start
 ```
